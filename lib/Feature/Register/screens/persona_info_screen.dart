@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
-import 'package:findy/Feature/Register/screens/otp_verify_screen.dart';
 import 'package:findy/Feature/Register/widget/appbar_app.dart';
 import 'package:findy/Feature/Register/widget/button_app.dart';
 import 'package:findy/Feature/Register/widget/route_page.dart';
@@ -8,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:intl/intl.dart';
 
+import '../../../Ui/utils/app_colors.dart';
 import '../../Login/screens/login_screen.dart';
 
 class PersonaInfoScreen extends StatefulWidget {
@@ -54,8 +54,6 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
     });
   }
 
-
-
   Future<void> pickImage() async {
     _result = await FilePicker.platform.pickFiles(
       type: FileType.image,
@@ -90,7 +88,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.backgroundColor,
       appBar: CustomAppBar(
         title: "ລົງທະບຽນ",
       ),
@@ -133,7 +131,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                         ? const Icon(
                             Icons.person,
                             size: 80,
-                            color: Colors.white,
+                            color: AppColors.whitecColor,
                           )
                         : null,
                   ),
@@ -143,13 +141,13 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                   height: 40,
                   margin: const EdgeInsets.only(top: 30),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.whitecColor,
                     shape: BoxShape.circle,
                   ),
                   child: IconButton(
                     icon: const Icon(
                       Icons.camera_alt_outlined,
-                      color: Colors.grey,
+                      color: AppColors.greyColor,
                     ),
                     onPressed: () {
                       pickImage();
@@ -181,10 +179,10 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.whitecColor,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.4),
+                            color: AppColors.greyColor.withOpacity(0.4),
                             spreadRadius: 2,
                             blurRadius: 5,
                             offset: Offset(0, 2),
@@ -193,7 +191,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                       ),
                       child: Icon(
                         Icons.person,
-                        color: Colors.grey,
+                        color: AppColors.greyColor,
                       ),
                     ),
                   ],
@@ -205,7 +203,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                     onChanged: (value) {},
                     decoration: const InputDecoration(
                       enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.brown),
+                        borderSide: BorderSide(color: AppColors.greyColor),
                       ),
                       hintText: "ຊື່ ແລະ ນາມສະກຸນ",
                       hintStyle: TextStyle(
@@ -219,15 +217,15 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                   keyboardType: TextInputType.phone,
                   onChanged: (value) {},
                   decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.brown),
+                    enabledBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.greyColor),
                     ),
                     hintText: "ວັນເດືອນປີເກີດ",
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                       fontFamily: "NotoSansLao",
                     ),
                     suffixIcon: IconButton(
-                      icon: Icon(Icons.calendar_month),
+                      icon: const Icon(Icons.calendar_month),
                       onPressed: () {
                         showDateTimePicker(context);
                         // Add your calendar icon onPressed functionality here
@@ -236,8 +234,8 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
+                const Padding(
+                  padding: EdgeInsets.only(
                     top: 20,
                   ),
                   child: Text(
@@ -260,7 +258,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                           groupValue: _selectedGender,
                           onChanged: _handleGenderChange,
                         ),
-                        Text(
+                        const Text(
                           'ຍິງ',
                           style: TextStyle(
                               fontFamily: "NotoSansLao", fontSize: 16),
@@ -274,7 +272,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                           groupValue: _selectedGender,
                           onChanged: _handleGenderChange,
                         ),
-                        Text(
+                        const Text(
                           'ຊາຍ',
                           style: TextStyle(
                               fontFamily: "NotoSansLao", fontSize: 16),
@@ -288,7 +286,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                           groupValue: _selectedGender,
                           onChanged: _handleGenderChange,
                         ),
-                        Text(
+                        const Text(
                           'ບໍລະບຸ',
                           style: TextStyle(
                               fontFamily: "NotoSansLao", fontSize: 16),
@@ -297,8 +295,8 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20, bottom: 20),
                   child: Text(
                     'ທີ່ຢູ່ປັດຈຸບັນ',
                     style: TextStyle(
@@ -318,21 +316,21 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                         child: DropdownButton<String>(
                           isExpanded: true, // Expand the dropdown to full width
                           value: selectedprovince,
-                          hint: Text(
+                          hint: const Text(
                             "ແຂວງ",
                             style: TextStyle(
                                 fontFamily: "NotoSansLao", fontSize: 16),
                           ),
-                          icon: Padding(
-                            padding: const EdgeInsets.only(right: 10),
+                          icon: const Padding(
+                            padding: EdgeInsets.only(right: 10),
                             child: Icon(Icons.expand_more_rounded),
                           ), // Icon on the right side
                           iconSize: 24,
                           elevation: 16,
-                          style: TextStyle(color: Colors.black),
+                          style: const TextStyle(color: AppColors.blackColor),
                           underline: Container(
                             height: 1,
-                            color: Colors.black,
+                            color: AppColors.blackColor,
                           ),
                           onChanged: (String? newValue) {
                             setState(() {
@@ -369,10 +367,10 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                           ), // Icon on the right side
                           iconSize: 24,
                           elevation: 16,
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: AppColors.blackColor),
                           underline: Container(
                             height: 1,
-                            color: Colors.black,
+                            color: AppColors.blackColor,
                           ),
                           onChanged: (String? newValue) {
                             setState(() {
@@ -397,7 +395,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                         onChanged: (value) {},
                         decoration: const InputDecoration(
                           enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.brown),
+                            borderSide: BorderSide(color: AppColors.blackColor),
                           ),
                           hintText: "ບ້ານ",
                           hintStyle: TextStyle(
@@ -425,19 +423,19 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                         width: 40,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: AppColors.whitecColor,
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.4),
+                              color: AppColors.greyColor.withOpacity(0.4),
                               spreadRadius: 2,
                               blurRadius: 5,
                               offset: Offset(0, 2),
                             ),
                           ],
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.lock,
-                          color: Colors.grey,
+                          color: AppColors.greyColor,
                         ),
                       ),
                     ],
@@ -445,7 +443,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     Text(
                       'ເບີໂທລະສັບ',
                       style: TextStyle(
@@ -460,7 +458,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                           fontFamily: "NotoSansLao",
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.grey),
+                          color: AppColors.greyColor),
                     ),
                   ],
                 ),
@@ -474,7 +472,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                             pwobscureText, // Set the password visibility
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.brown),
+                            borderSide: BorderSide(color: AppColors.greyColor),
                           ),
                           hintText: 'ລະຫັດຜ່ານ', // Hint text when hinted
                           suffixIcon: IconButton(
@@ -482,7 +480,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                               pwobscureText
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Colors.grey,
+                              color: AppColors.greyColor,
                             ),
                             onPressed: () {
                               setState(() {
@@ -499,7 +497,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                             cpwobscureText, // Set the password visibility
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.brown),
+                            borderSide: BorderSide(color: AppColors.greyColor),
                           ),
                           hintText: 'ຢືນຢັນລະຫັດຜ່ານ', // Hint text when hinted
                           suffixIcon: IconButton(
@@ -507,7 +505,7 @@ class _PersonaInfoScreenState extends State<PersonaInfoScreen> {
                               cpwobscureText
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Colors.grey,
+                              color: AppColors.greyColor,
                             ),
                             onPressed: () {
                               setState(() {

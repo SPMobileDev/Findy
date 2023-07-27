@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:findy/Feature/Register/widget/buttom_app.dart';
 import 'package:findy/Feature/Register/widget/button_app.dart';
 
+import '../../../Ui/utils/app_colors.dart';
 import '../../Login/screens/login_screen.dart';
 
 class OTPVerifyScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _OTPVerifyScreenState extends State<OTPVerifyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.backgroundColor,
       appBar: const CustomAppBar(customIconData: Icons.arrow_back_ios_rounded),
       body: body(),
       bottomNavigationBar: ButtomApp(
@@ -64,7 +65,7 @@ class _OTPVerifyScreenState extends State<OTPVerifyScreen> {
                       fontFamily: "NotoSansLao",
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
-                      color: Colors.grey,
+                      color: AppColors.greyColor,
                     ),
                   ),
                   Padding(
@@ -75,7 +76,7 @@ class _OTPVerifyScreenState extends State<OTPVerifyScreen> {
                       onChanged: (value) {},
                       decoration: const InputDecoration(
                         enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.brown),
+                          borderSide: BorderSide(color: AppColors.greyColor),
                         ),
                         hintText:
                             'ປ້ອນລະຫັດ OTP 6 ຕົວເລກ', // Optional: You can add a hint text

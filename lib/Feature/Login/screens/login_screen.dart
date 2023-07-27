@@ -6,6 +6,7 @@ import 'package:findy/Feature/Register/widget/buttom_app.dart';
 import 'package:findy/Feature/Register/widget/button_app.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Ui/utils/app_colors.dart';
 import '../../Register/screens/otp_verify_screen.dart';
 import '../../Register/widget/route_page.dart';
 
@@ -23,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.backgroundColor,
         appBar: CustomAppBar(
           onLeadingPressed: () {
             exit(0);
@@ -67,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontFamily: "NotoSansLao",
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
-                      color: Colors.grey),
+                      color: AppColors.greyColor),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 50, left: 40, right: 40),
@@ -86,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     fontSize: 16, fontWeight: FontWeight.bold)),
                           ),
                           enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.brown),
+                            borderSide: BorderSide(color: AppColors.greyColor),
                           ),
                           hintText:
                               'XXXX XXXX', // Optional: You can add a hint text
@@ -98,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             pwobscureText, // Set the password visibility
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.brown),
+                            borderSide: BorderSide(color: AppColors.greyColor),
                           ),
                           hintText: 'ລະຫັດຜ່ານ', // Hint text when hinted
                           suffixIcon: IconButton(
@@ -106,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               pwobscureText
                                   ? Icons.visibility
                                   : Icons.visibility_off,
-                              color: Colors.grey,
+                              color: AppColors.greyColor,
                             ),
                             onPressed: () {
                               setState(() {

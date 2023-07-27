@@ -4,6 +4,7 @@ import 'package:findy/Feature/Register/screens/otp_verify_screen.dart';
 import 'package:findy/Feature/Register/widget/buttom_app.dart';
 import 'package:findy/Feature/Register/widget/route_page.dart';
 import 'package:flutter/material.dart';
+import '../../../Ui/utils/app_colors.dart';
 import '../widget/appbar_app.dart';
 import '../widget/button_app.dart'; // Import the package_info library
 
@@ -19,7 +20,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.backgroundColor,
         appBar: CustomAppBar(
           onLeadingPressed: () {
             exit(0);
@@ -68,7 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       fontFamily: "NotoSansLao",
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
-                      color: Colors.grey),
+                      color: AppColors.greyColor),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, left: 40, right: 40),
@@ -85,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 fontSize: 16, fontWeight: FontWeight.bold)),
                       ),
                       enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.brown),
+                        borderSide: BorderSide(color:AppColors.greyColor),
                       ),
                       hintText:
                           'XXXX XXXX', // Optional: You can add a hint text
